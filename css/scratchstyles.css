@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(54, 137, 137);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.common {
+    background-color: azure;
+    border: 5px solid blueviolet;
+    position: absolute;
+}
+
+.header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 92px;
+    position: fixed; /* Ensure header stays fixed */
+  }
+  
+  .bigbody {
+    top: 114px;
+    left: 10px;
+    right: 10px;
+    bottom: 50px;
+    /* Remove fixed height and overflow */
+    height: auto;
+    overflow-y: auto; /* Add scrollbar if needed */
+    position: absolute; /* Position relative to the viewport */
+  }
+  
+  .footer {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    height: 25px;
+    position: fixed;
+    text-align: center;
+  } 
+
+
+.title{
+    font-family: 'Times New Roman', Times, serif;
+    color: darkblue;
+    text-align: center;
+    font-size:large;
+}
+
+.subtitle{
+    font-family: 'Times New Roman', Times, serif;
+    color: darkblue;
+    text-align: center;
+    font-size:medium;
+}
+
+.header img {
+    margin-right: 20px; /* Adjust margin as needed */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #equation, #result {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Practice</h1>
+    <p>Solve the following equation:</p>
+    <p id="equation"></p>
+    <input type="text" id="answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        function generateEquation() {
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let num2 = Math.floor(Math.random() * 10) + 1;
+            let operator = Math.random() < 0.5 ? '+' : '-';
+
+            let equation = num1 + ' ' + operator + ' ' + num2 + ' = ?';
+            document.getElementById('equation').textContent = equation;
+
+            // Calculate the correct answer manually
+            if (operator === '+') {
+                window.correctAnswer = num1 + num2;
+            } else {
+                window.correctAnswer = num1 - num2;
+            }
+        }
+
+        function checkAnswer() {
+            let userAnswer = parseInt(document.getElementById('answer').value);
+            let resultElement = document.getElementById('result');
+
+            if (userAnswer === window.correctAnswer) {
+                resultElement.textContent = 'Correct!';
+            } else {
+                resultElement.textContent = 'Incorrect. The correct answer is ' + window.correctAnswer;
+            }
+
+            // Generate a new equation after checking the answer
+            generateEquation();
+            document.getElementById('answer').value = '';
+        }
+
+        // Generate the initial equation
+        generateEquation();
+    </script>
+</body>
+</html>
